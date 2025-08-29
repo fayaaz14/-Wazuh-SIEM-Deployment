@@ -1,4 +1,5 @@
-# -Wazuh-SIEM-Deployment
+# Wazuh SIEM Deployment & SSH Brute Force Detection
+
  This project demonstrates the deployment of **Wazuh SIEM** in a virtualized lab environment, connecting an agent from **Kali Linux**, and detecting a simulated **SSH brute-force attack** in real time. 
 The goal of this project was to:  
 - Understand **SIEM deployment & configuration**  
@@ -36,7 +37,7 @@ https://<Ubuntu_IP>:443
 ### 2. Install Wazuh Agent (Kali)  
 ```bash
 wget https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.12.0-1_amd64.deb
-sudo WAZUH_MANAGER='YOUR IP' WAZUH_AGENT_NAME='AGENT NAME' dpkg -i ./wazuh-agent_4.12.0-1_amd64.deb
+sudo WAZUH_MANAGER='YOUR UBUNTU IP' WAZUH_AGENT_NAME='AGENT NAME' dpkg -i ./wazuh-agent_4.12.0-1_amd64.deb
 ```
 
 Enable and start the agent:  
@@ -59,7 +60,7 @@ From Kali (attacker), simulate SSH brute force against Ubuntu server:
 hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://YOUR IP
 ```
 
-(or multiple failed SSH attempts using `ssh root@YOUR IP`)  
+(or multiple failed SSH attempts using `ssh root@YOUR UBUNTU IP`)  
 
 ---
 
@@ -70,6 +71,11 @@ hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://YOUR IP
 - Alerts visible in **Wazuh Dashboard → Security Events**
   <img width="1852" height="907" alt="image" src="https://github.com/user-attachments/assets/c62df06e-9df2-47a6-9fd8-2b7b01f257dd" />
 
+  
+  ## 🚀 Future Enhancements
+- Enable Active Response to auto-block brute force IPs  
+- Add more attack scenarios (Nmap scan, web login brute force)  
+- Export alerts to Elastic dashboards for advanced visualization  
 
 
 
