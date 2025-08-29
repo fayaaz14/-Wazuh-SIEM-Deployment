@@ -29,8 +29,9 @@ Dashboard runs on:
 ```
 https://<Ubuntu_IP>:443
 ```
+<img width="1847" height="910" alt="image" src="https://github.com/user-attachments/assets/b3b23753-eb2f-40ba-a1ff-b23082fa26ed" />
 
----
+
 
 ### 2. Install Wazuh Agent (Kali)  
 ```bash
@@ -45,6 +46,8 @@ sudo systemctl start wazuh-agent
 ```
 
 ✅ Now Kali agent appears in Wazuh Dashboard.  
+<img width="1850" height="902" alt="image" src="https://github.com/user-attachments/assets/015222f0-abf8-4e46-a42f-67fae9dec1e9" />
+
 
 ---
 
@@ -64,11 +67,11 @@ hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://YOUR IP
 
 - Wazuh collects logs from `/var/log/auth.log` on Kali  
 - Failed SSH login attempts generate **security alerts**  
-- Alerts visible in **Wazuh Dashboard → Security Events**  
+- Alerts visible in **Wazuh Dashboard → Security Events**
+  <img width="1852" height="907" alt="image" src="https://github.com/user-attachments/assets/c62df06e-9df2-47a6-9fd8-2b7b01f257dd" />
 
-📸 *[Insert screenshot: Wazuh showing SSH brute force detection]*  
 
----
+
 
 ## 📌 Key Learnings  
 - Deploying **SIEM from scratch** (Wazuh setup + agents)  
